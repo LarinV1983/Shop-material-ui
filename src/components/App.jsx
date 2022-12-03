@@ -3,6 +3,7 @@ import Header from './Header';
 import BasketList from './BasketList';
 import GoodsList from './GoodsList';
 import Search from './Search';
+import Container from '@mui/material/Box';
 
 import { goods } from '../data/goods';
 
@@ -67,9 +68,8 @@ const App = () => {
     return (
       <>
       <Header />
-        <div className='App'>
-            <div className='container'>
-                <Search
+      <Container sx={{mt: '1rem'}}>
+         <Search
                     value={search}
                     onChange={handleChange}
                 />
@@ -81,8 +81,7 @@ const App = () => {
                     order={order}
                     setOrder={removeFromOrder}
                 />
-            </div>
-        </div>
+      </Container>
         </>
     );
 }
