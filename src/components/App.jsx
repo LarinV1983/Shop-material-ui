@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from './Header';
-import BasketList from './BasketList';
 import GoodsList from './GoodsList';
 import Search from './Search';
 import Container from '@mui/material/Box';
+import Basket from './Basket';
 
 import { goods } from '../data/goods';
 
@@ -11,6 +11,7 @@ const App = () => {
     const [order, setOrder] = React.useState([]);
     const [search, setSearch] = React.useState('');
     const [products, setProducts] = React.useState(goods);
+    const [isCartOpen, setCartOpen] = React.useState(false);
 
     const handleChange = (e) => {
         if (!e.target.value) {
@@ -67,7 +68,9 @@ const App = () => {
 
     return (
       <>
-      <Header />
+      <Header 
+      handleCart={()=> setCartOpen(true)}
+      />
       <Container sx={{mt: '1rem'}}>
          <Search
                     value={search}
@@ -77,13 +80,15 @@ const App = () => {
                     goods={products}
                     setOrder={addToOrder}
                 />
-                <BasketList
-                    order={order}
-                    setOrder={removeFromOrder}
-                />
       </Container>
-        </>
-    );
+      <Basket
+      order={order}
+      removeFromOrder={removeFromOrder} 
+      cartOpen={isCartOpen}
+      closeCart={()=> setCartOpen(false)}
+      />
+    </>
+  );
 }
 
 export default App;

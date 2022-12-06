@@ -5,14 +5,16 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
- function Header() {
+ function Header({handleCart}) {
 	return (
 		<AppBar position="static">
 		<Toolbar>
 			<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             SHOP
           </Typography>
-          <IconButton color ='inherit'>
+          <IconButton color ='inherit'
+          onClick={handleCart}
+          >
           	<ShoppingBasketIcon />
           </IconButton>
 		</Toolbar>
