@@ -1,10 +1,10 @@
 import React from 'react';
+import Grid from '@mui/material/Grid';
 
-const GoodsItem = (props) => {
-    const { name, price, setOrder } = props;
+const GoodsItem = ({ name, price, setOrder, id }) => {
 
     return (
-        <div className='col-12 col-md-6 px-md-2'>
+        <Grid item xs={12} md={4}>
             <div className='card'>
                 <img
                     src={`https://via.placeholder.com/300x150.png?text=${name.slice(
@@ -21,9 +21,9 @@ const GoodsItem = (props) => {
                         className='btn btn-primary'
                         onClick={() =>
                             setOrder({
-                                id: props.id,
-                                name: props.name,
-                                price: props.price,
+                                id: id,
+                                name: name,
+                                price: price,
                             })
                         }
                     >
@@ -31,7 +31,7 @@ const GoodsItem = (props) => {
                     </button>
                 </div>
             </div>
-        </div>
+        </Grid>
     );
 };
 

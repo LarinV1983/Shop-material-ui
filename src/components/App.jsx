@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import Header from './Header';
 import BasketList from './BasketList';
 import GoodsList from './GoodsList';
@@ -8,9 +8,9 @@ import Container from '@mui/material/Box';
 import { goods } from '../data/goods';
 
 const App = () => {
-    const [order, setOrder] = useState([]);
-    const [search, setSearch] = useState('');
-    const [products, setProducts] = useState(goods);
+    const [order, setOrder] = React.useState([]);
+    const [search, setSearch] = React.useState('');
+    const [products, setProducts] = React.useState(goods);
 
     const handleChange = (e) => {
         if (!e.target.value) {
