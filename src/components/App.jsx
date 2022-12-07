@@ -75,13 +75,13 @@ const App = () => {
       orderLen={order.length}
       />
       <Container sx={{mt: '1rem'}}>
-         <Search
-                    value={search}
-                    onChange={handleChange}
+        <Search
+          value={search}
+          onChange={handleChange}
                 />
-                <GoodsList
-                    goods={products}
-                    setOrder={addToOrder}
+        <GoodsList
+          goods={products}
+          setOrder={addToOrder}
                 />
       </Container>
       <Basket

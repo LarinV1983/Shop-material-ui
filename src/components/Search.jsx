@@ -5,7 +5,7 @@ const Search = ({ onChange, value }) => {
     return <TextField
     label='search'
     type='search'
-    sx={{mb: '1.5rem', ml:'1rem', width: 400}}
+    sx={{mb: '1.5rem', width: 370}}
     size="small" 
     value={value} 
     onChange={onChange} 
